@@ -1,0 +1,13 @@
+ SET IDENTITY_INSERT [dbo].[TeachMethod] ON
+ INSERT INTO [dbo].[TeachMethod]  VALUES (4,''TEACHMETHOD_BOTH'')
+ SET IDENTITY_INSERT [dbo].[TeachMethod] OFF
+
+An explicit value for the identity column in table 'dbo.TeachMethod' can only be specified when a column list is used and IDENTITY_INSERT is ON.
+
+在EF中进行插入的时候，必须保持必须指明要插入的列名，不能简写。
+如下
+SET IDENTITY_INSERT [dbo].[TeachMethod] ON
+INSERT INTO [dbo].[TeachMethod] ([Id], [Name]) VALUES (4, ''TEACHMETHOD_BOTH'');
+SET IDENTITY_INSERT [dbo].[TeachMethod] OFF
+
+
